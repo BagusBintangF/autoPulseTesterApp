@@ -32,8 +32,8 @@ const StationPage = (props) => {
 
     return (
     <>
-        <nav className="relative z-20 bg-clip-border h-20 w-full sticky top-0 shadow-xl shadow-blue-gray-900/70 bg-white p-6"> 
-            <h5 className="block antialiased tracking-normal font-sans text-xl font-semibold leading-snug text-gray-900">Station Testing Page</h5>
+        <nav className="relative z-20 bg-clip-border xl:h-20 h-15 w-full sticky top-0 shadow-xl shadow-blue-gray-900/70 bg-white p-6"> 
+            <h5 className="block antialiased tracking-normal font-sans xl:text-xl text-md font-semibold leading-snug text-gray-900">Station Testing Page</h5>
         </nav>
         {
             stationDialogContent.map(function (contentDialog){

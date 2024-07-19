@@ -3,26 +3,26 @@ import React from 'react'
 const SideBar = () => {
   return (
     <>
-        <div className="sticky top-0 z-30 relative flex-col bg-clip-border bg-slate-800 text-gray-700 w-full h-screen xl:max-w-[16rem] max-w-[10rem] p-4 shadow-xl shadow-blue-gray-900/5">
-            <div className="mb-2 p-4">
-                <h5 className="block antialiased tracking-normal font-sans text-xl font-semibold leading-snug text-gray-100">autoPulse Electronics Tester</h5>
+        <div className="sticky top-0 z-30 relative flex-col bg-clip-border bg-slate-800 text-gray-700 w-full h-screen xl:max-w-[14rem] max-w-[10rem] xl:p-4 p-2 shadow-xl shadow-blue-gray-900/5">
+            <div className="mb-2 p-2 pl-4">
+                <h5 className="block antialiased tracking-normal font-sans xl:text-xl text-sm  font-semibold leading-snug text-gray-100">autoPulse E-Test</h5>
             </div>
-            <nav className="flex flex-col gap-1 xl:min-w-[240px] min-w-[100px] p-2 font-sans xl:text-base text-sm font-normal text-gray-100">
-                <div role="button" tabIndex="0" className="flex items-center w-full p-3 rounded-lg text-start leading-tight transition-all hover:bg-blue-50 hover:bg-opacity-80 focus:bg-blue-50 focus:bg-opacity-80 active:bg-gray-50 active:bg-opacity-80 hover:text-blue-900 focus:text-blue-900 active:text-blue-900 outline-none">
+            <nav className="flex flex-col gap-1 xl:min-w-[240px] min-w-[100px] xl:p-2 p-0.5 font-sans xl:text-base text-sm font-normal text-gray-100">
+                <div role="button" tabIndex="0" className="flex items-center w-full xl:p-3 p-1 pt-3 pb-3 xl:rounded-lg rounded-md text-start leading-tight transition-all hover:bg-blue-50 hover:bg-opacity-80 focus:bg-blue-50 focus:bg-opacity-80 active:bg-gray-50 active:bg-opacity-80 hover:text-blue-900 focus:text-blue-900 active:text-blue-900 outline-none">
                 <div className="grid place-items-center mr-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className="h-5 w-5">
-                    <path fillRule="evenodd" d="M2.25 2.25a.75.75 0 000 1.5H3v10.5a3 3 0 003 3h1.21l-1.172 3.513a.75.75 0 001.424.474l.329-.987h8.418l.33.987a.75.75 0 001.422-.474l-1.17-3.513H18a3 3 0 003-3V3.75h.75a.75.75 0 000-1.5H2.25zm6.04 16.5l.5-1.5h6.42l.5 1.5H8.29zm7.46-12a.75.75 0 00-1.5 0v6a.75.75 0 001.5 0v-6zm-3 2.25a.75.75 0 00-1.5 0v3.75a.75.75 0 001.5 0V9zm-3 2.25a.75.75 0 00-1.5 0v1.5a.75.75 0 001.5 0v-1.5z" clipRule="evenodd"></path>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className="h-4 w-4">
+                    <path fillRule="evenodd" d="M15 4H9v16h6V4Zm2 16h3a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-3v16ZM4 4h3v16H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" clipRule="evenodd"></path>
                     </svg>
                 </div>
-                Station Page
+                Station
                 </div>
-                <div role="button" tabIndex="0" className="flex items-center w-full p-3 rounded-lg text-start leading-tight transition-all hover:bg-blue-50 hover:bg-opacity-80 focus:bg-blue-50 focus:bg-opacity-80 active:bg-blue-50 active:bg-opacity-80 hover:text-blue-900 focus:text-blue-900 active:text-blue-900 outline-none">
+                <div role="button" tabIndex="0" className="flex items-center w-full xl:p-3 p-1 pt-3 pb-3 xl:rounded-lg rounded-md text-start leading-tight transition-all hover:bg-blue-50 hover:bg-opacity-80 focus:bg-blue-50 focus:bg-opacity-80 active:bg-blue-50 active:bg-opacity-80 hover:text-blue-900 focus:text-blue-900 active:text-blue-900 outline-none">
                 <div className="grid place-items-center mr-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className="h-5 w-5">
-                    <path fillRule="evenodd" d="M7.5 6v.75H5.513c-.96 0-1.764.724-1.865 1.679l-1.263 12A1.875 1.875 0 004.25 22.5h15.5a1.875 1.875 0 001.865-2.071l-1.263-12a1.875 1.875 0 00-1.865-1.679H16.5V6a4.5 4.5 0 10-9 0zM12 3a3 3 0 00-3 3v.75h6V6a3 3 0 00-3-3zm-3 8.25a3 3 0 106 0v-.75a.75.75 0 011.5 0v.75a4.5 4.5 0 11-9 0v-.75a.75.75 0 011.5 0v.75z" clipRule="evenodd"></path>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className="h-4 w-4">
+                    <path fillRule="evenodd" d="M4 4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H4Zm0 8v6h7v-6H4Zm16 6h-7v-6h7v6Z" clipRule="evenodd"></path>
                     </svg>
                 </div>
-                Gantry Page
+                Gantry
                 </div>
             </nav>
         </div>
