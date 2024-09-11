@@ -10,6 +10,7 @@ import SideBar from './components/fragments/sideBar/index.jsx'
 import GantryPage from './components/fragments/gantryPage/index.jsx'
 import ErrorPage from './components/pages/errorPage/index.jsx'
 import ValveTestPage from './components/fragments/valveTestPage/index.jsx'
+import EepromPage from './components/fragments/eepromPage/index.jsx'
 
 function App() {
   
@@ -31,6 +32,10 @@ function App() {
           {
             path:"station/valve-test/",
             element:<ValveTestPage/>,
+          },
+          {
+            path:"eeprom/",
+            element:<EepromPage/>,
           },  
         ],
       },

@@ -2,32 +2,38 @@ import React from 'react'
 import DialogBar from '../dialogBar';
 
 const GantryPage = (props) => {
-    const stationDialogContent=[
+    const gantryDialogContent=[
         {
             id:1,
-            title:"Y Axis Board Test",
-            content:"Page untuk test valve pada station"
+            title:"Setting EEPROM",
+            content:"Page untuk test valve pada station",
+            direction:"eeprom"
         },
         {
             id:2,
-            title:"X Axis Board Test",
+            title:"Testing Motor",
             content:"Page untuk test limit switch pada station"
         },
         {
             id:3,
-            title:"Z Axis Board Test",
+            title:"Testing Sensor",
             content:"Page untuk test Pressure Vaccum Sensor pada station"
         },
-        {
-            id:4,
-            title:"Servo Board Test",
-            content:"Page untuk test Load Cell pada station"
-        },
-        {
-            id:5,
-            title:"IO Board Test",
-            content:"Page untuk test Motor pada station"
-        },
+        // {
+        //     id:4,
+        //     title:"Testing Motor Z",
+        //     content:"Page untuk test Load Cell pada station"
+        // },
+        // {
+        //     id:5,
+        //     title:"Testing Servo",
+        //     content:"Page untuk test Motor pada station"
+        // },
+        // {
+        //     id:6,
+        //     title:"Testing Sensor",
+        //     content:"Page untuk test Motor pada station"
+        // },
     ];
 
     return (
@@ -36,14 +42,13 @@ const GantryPage = (props) => {
             <h5 className="block antialiased tracking-normal font-sans xl:text-xl text-md font-semibold leading-snug text-gray-900">Gantry Testing Page</h5>
         </nav>
         {
-            stationDialogContent.map(function (contentDialog){
+            gantryDialogContent.map(function (contentDialog){
                 return(
-                    <DialogBar key={contentDialog.id} title={contentDialog.title} content={contentDialog.content}/>    
+                    <DialogBar key={contentDialog.id} title={contentDialog.title} content={contentDialog.content} direction={contentDialog.direction}/>    
                 )
             })
             
         }
-
     </>
   )
 }
