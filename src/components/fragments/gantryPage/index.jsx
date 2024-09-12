@@ -44,7 +44,7 @@ const GantryPage = (props) => {
         {
             gantryDialogContent.map(function (contentDialog){
                 return(
-                    <DialogBar key={contentDialog.id} title={contentDialog.title} content={contentDialog.content} direction={contentDialog.direction}/>    
+                    <DialogBar contentId={contentDialog.id} title={contentDialog.title} content={contentDialog.content} direction={contentDialog.direction}/>    
                 )
             })
             
