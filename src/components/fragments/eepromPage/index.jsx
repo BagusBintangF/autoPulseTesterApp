@@ -1,42 +1,41 @@
 import React from 'react'
-import DialogBar from '../dialogBar';
-import DialogBarWithContent from '../dialogBarWithContent';
 import ProgressBar from '../progressBar';
 
-const EepromPage = (props) => {
+const EepromPage = () => {
+
     const eepromDialogContent=[
         {
-            id:1,
-            title:"Concentration Station",
+            id:0,
+            title:"Y Axis Board",
             precentage:"10",
         },
         {
-            id:2,
-            title:"Cleaning Station",
+            id:1,
+            title:"X Axis Board",
             precentage:"30",
         },
         {
-            id:3,
-            title:"X Axis Board",
+            id:2,
+            title:"Z Axis Board",
             precentage:"40",
         },
         {
-            id:4,
-            title:"Y Axis Board",
+            id:3,
+            title:"Gripper Board",
             precentage:"60",
         },
         {
-            id:5,
-            title:"Z Axis Board",
+            id:4,
+            title:"Concentration Station",
             precentage:"80",
         },
         {
-            id:6,
-            title:"Gripper Board",
+            id:5,
+            title:"Cleaning Station",
             precentage:"90",
         },
         {
-            id:7,
+            id:6,
             title:"IO Board",
             precentage:"100",
         },
@@ -44,7 +43,7 @@ const EepromPage = (props) => {
 
     return (
     <>
-        <nav className="relative z-20 bg-clip-border xl:h-20 h-15 w-full sticky top-0 right-0 shadow-xl shadow-blue-gray-900/70 bg-white p-6"> 
+        <nav key="eepromPageNav" className="relative z-20 bg-clip-border xl:h-20 h-15 w-full sticky top-0 right-0 shadow-xl shadow-blue-gray-900/70 bg-white p-6"> 
             {/* <span role="button" className="leading-tight transition-all hover:bg-blue-50 hover:bg-opacity-80 focus:bg-blue-50 focus:bg-opacity-80 active:bg-gray-50 active:bg-opacity-80 hover:text-blue-900 focus:text-blue-900 active:text-blue-900 outline-none">
                 <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                     <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m15 19-7-7 7-7"/>
@@ -52,7 +51,7 @@ const EepromPage = (props) => {
             </span> */}
             <h5 className="block antialiased tracking-normal font-sans xl:text-xl text-md font-semibold leading-snug text-gray-900">Setting EEPROM</h5>
         </nav>
-        <div className="w-full m-6 rounded bg-white text-gray-700 p-5 shadow-xl shadow-blue-gray-900/5">
+        <div key="eepromPageBody" className="w-full m-6 rounded bg-white text-gray-700 p-5 shadow-xl shadow-blue-gray-900/5">
             <p className="p-2 text-justify">Untuk upload konfigurasi EEPROM klik tombol {"\t"} 
                 {
                 <svg className="inline-block h-6 w-6 stroke-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -69,7 +68,7 @@ const EepromPage = (props) => {
             {
             eepromDialogContent.map(function (contentDialog){
                 return(
-                    <ProgressBar contentId={contentDialog.id} progressBarName={contentDialog.title} barPrecentage={contentDialog.precentage}/>    
+                    <ProgressBar key={contentDialog.id} contentId={contentDialog.id} progressBarName={contentDialog.title} barPrecentage={contentDialog.precentage}/>    
                 )
             })
             
