@@ -7,7 +7,7 @@ const EepromPage = () => {
         {
             id:0,
             title:"Y Axis Board",
-            precentage:"10",
+            precentage:"0",
         },
         {
             id:1,

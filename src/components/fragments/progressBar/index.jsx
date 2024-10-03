@@ -34,7 +34,6 @@ const ProgressBar = (props) => {
         else{
             alert('Error')
         }
-        // RenderNotification()
     } catch(err){
         return(err)
     }
@@ -60,9 +59,9 @@ const ProgressBar = (props) => {
                 </Link>
 
             </div>
-            <div key={`precentage${props.contentId}`} className="w-full bg-gray-200 rounded-full h-4.5 dark:bg-gray-700">
+            {/* <div key={`precentage${props.contentId}`} className="w-full bg-gray-200 rounded-full h-4.5 dark:bg-gray-700">
                 <div className="bg-blue-600 h-4.5 rounded-full text-xs font-medium text-blue-100 text-center leading-none p-0.5" style={{width: props.barPrecentage +'%'}}>{props.barPrecentage}%</div>
-            </div>
+            </div> */}
         </div>
     </>
 
