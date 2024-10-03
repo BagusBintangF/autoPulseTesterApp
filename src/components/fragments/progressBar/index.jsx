@@ -16,8 +16,8 @@ const ProgressBar = (props) => {
     try{
         const data = await (await fetch(`http://127.0.0.1:8000/set-eeprom/${id}`)).json()
         setEepromResponse(data)
-        if(eepromResponse != undefined)
-            alert(`${eepromResponse.message}`)
+        if(data != null)
+            alert(`${data.message}`)
         else{
             alert('Error')
         }
@@ -29,26 +29,13 @@ const ProgressBar = (props) => {
     try{
         const data  = await (await fetch(`http://127.0.0.1:8000/compare-eeprom/${id}`)).json()
         setCompareResponse(data)
-        // if(compareResponse != undefined)
-        //     alert(`${compareResponse.boardName} : ${compareResponse.message}`)
-        // else{
-        //     alert('Error')
-        // }
-        RenderNotification()
+        if(data != null)
+            alert(`${data.boardName} : ${data.message}`)
+        else{
+            alert('Error')
+        }
+        // RenderNotification()
     } catch(err){
-        return(err)
-    }
-  }
-
-  const RenderNotification = () =>{
-   try{
-    if(compareResponse != undefined)
-        alert(`${compareResponse.boardName} : ${compareResponse.message}`)
-    else{
-        alert('Error')
-    }
-    }
-    catch(err){
         return(err)
     }
   }
