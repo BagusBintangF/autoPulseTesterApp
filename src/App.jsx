@@ -11,6 +11,7 @@ import GantryPage from './components/fragments/gantryPage/index.jsx'
 import ErrorPage from './components/pages/errorPage/index.jsx'
 import ValveTestPage from './components/fragments/valveTestPage/index.jsx'
 import EepromPage from './components/fragments/eepromPage/index.jsx'
+import GantryMotorTestPage from './components/fragments/gantryMotorTestPage/index.jsx'
 
 function App() {
   
@@ -28,6 +29,10 @@ function App() {
           {
             path:"gantry/",
             element:<GantryPage/>,
+          },  
+          {
+            path:"gantry/motor-test/",
+            element:<GantryMotorTestPage/>,
           },  
           {
             path:"station/valve-test/",
