@@ -1,44 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import UseApiHook from '../../../hook'
-
-
+import UseApiHook from '../../../hook/useApiHook'
+import SetEepromConfig from '../../../hook/setEepromConfig'
+import CompareEepromConfig from '../../../hook/compareEepromConfig'
 
 const ProgressBar = (props) => {
-  const [eepromResponse, setEepromResponse] = useState([])
-  const [compareResponse, setCompareResponse] = useState([])
-  
-//   useEffect(()=>{
-//     RenderNotification()
-//   },[compareResponse])
-
-  const SetEepromConfig = async (id) =>{
-    try{
-        const data = await (await fetch(`http://127.0.0.1:8000/set-eeprom/${id}`)).json()
-        setEepromResponse(data)
-        if(data != null)
-            alert(`${data.message}`)
-        else{
-            alert('Error')
-        }
-    } catch(err){
-        return(err)
-    }
-  }
-  const CompareEepromConfig = async (id) =>{
-    try{
-        const data  = await (await fetch(`http://127.0.0.1:8000/compare-eeprom/${id}`)).json()
-        setCompareResponse(data)
-        if(data != null)
-            alert(`${data.boardName} : ${data.message}`)
-        else{
-            alert('Error')
-        }
-    } catch(err){
-        return(err)
-    }
-  }
-
   return (
     <>
         <div key={props.contentId} className="mt-2 mb-2 h-24 rounded bg-white text-gray-700 p-5 shadow-xl shadow-blue-gray-900/5">
