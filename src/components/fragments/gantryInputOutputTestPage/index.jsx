@@ -4,7 +4,7 @@ import DialogBarWithContent from '../dialogBarWithContent';
 import BackIcon from '../../elements/backIcon';
 
 const GantryIoTestPage = (props) => {
-    const gantryIoDialogContent=[
+    const gantryOutputDialogContent=[
         {
             id:0,
             title:"Testing LED Strip",
@@ -18,6 +18,13 @@ const GantryIoTestPage = (props) => {
             ]
         },
     ];
+    const gantryInputDialogContent=[
+        {
+            id:0,
+            title:"Testing LED Strip",
+            content:"Page untuk test limit switch pada station",
+        },
+    ];
 
     return (
     <>
@@ -26,7 +33,15 @@ const GantryIoTestPage = (props) => {
             <h5 className="item-center inline-block antialiased tracking-normal font-sans xl:text-xl text-md font-semibold leading-snug text-gray-900">Motor Testing Page</h5>
         </nav>
         {
-            gantryIoDialogContent.map(function (contentDialog){
+            gantryOutputDialogContent.map(function (contentDialog){
+                return(
+                    <DialogBarWithContent key={contentDialog.id} contentId={contentDialog.id} title={contentDialog.title} content={contentDialog.content} testing={contentDialog.testing}/>    
+                )
+            })
+            
+        }
+        {
+            gantryOutputDialogContent.map(function (contentDialog){
                 return(
                     <DialogBarWithContent key={contentDialog.id} contentId={contentDialog.id} title={contentDialog.title} content={contentDialog.content} testing={contentDialog.testing}/>    
                 )
