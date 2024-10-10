@@ -11,8 +11,10 @@ const GantryPage = (props) => {
         },
         {
             id:2,
-            title:"Testing Sensor",
-            content:"Page untuk test Pressure Vaccum Sensor pada station"
+            title:"Testing Input/Output",
+            content:"Page untuk test Pressure Vaccum Sensor pada station",
+            direction : "io-test"
+
         },
     ];
 
