@@ -11,7 +11,7 @@ const StationPage = (props) => {
         },
         {
             id:2,
-            title:"Limit Switch Test",
+            title:"Switch Test",
             content:"Page untuk test limit switch pada station"
         },
         {

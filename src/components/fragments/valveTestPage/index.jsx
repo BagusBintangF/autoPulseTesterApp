@@ -1,17 +1,89 @@
 import React from 'react'
+import BackIcon from '../../elements/backIcon';
+import DialogBarWithContent from '../dialogBarWithContent';
 
 const ValveTestPage = () => {
-  return (
-    <div>
-        <nav className="flex flex-row z-20 bg-clip-border xl:h-20 h-15 w-full sticky top-0 shadow-xl shadow-blue-gray-900/70 bg-white p-6"> 
-            <span role="button" className="leading-tight transition-all hover:bg-blue-50 hover:bg-opacity-80 focus:bg-blue-50 focus:bg-opacity-80 active:bg-gray-50 active:bg-opacity-80 hover:text-blue-900 focus:text-blue-900 active:text-blue-900 outline-none">
-                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                    <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m15 19-7-7 7-7"/>
-                </svg>
-            </span>
-            <h5 className="antialiased tracking-normal font-sans xl:text-xl text-md font-semibold leading-snug text-gray-900">Valve Testing Page</h5>
-        </nav>
-    </div>
+  const valveDialogContent=[
+    {
+        id:0,
+        title:"Testing Front Valve",
+        content:"Page untuk test limit switch pada station",
+        testing:[
+            {   
+                testId : 0,
+                testName:"Sequence Test",
+                direction:"sequence"
+            },
+            {
+                testId : 1,
+                testName:"Homing Test",
+                direction:"homing",
+            } 
+        ]
+    },
+    {
+        id:1,
+        title:"Testing Back Valve",
+        content:"Page untuk test Pressure Vaccum Sensor pada station",
+        testing:[
+            {   
+                testId : 0,
+                testName:"Sequence Test",
+                direction:"sequence"
+            },
+            {
+                testId : 1,
+                testName:"Homing Test",
+                direction:"homing",
+            } 
+        ]
+    },
+    {
+        id:2,
+        title:"Testing Regulator Valve",
+        content:"Page untuk test Pressure Vaccum Sensor pada station",
+        testing:[
+            {   
+                testId : 0,
+                testName:"Sequence Test",
+                direction:"sequence"
+            },
+            {
+                testId : 1,
+                testName:"Homing Test",
+                direction:"homing",
+            } 
+        ]            
+    },
+    {
+        id:3,
+        title:"Testing Air Control Valve",
+        content:"Page untuk test Pressure Vaccum Sensor pada station",
+        testing:[
+            {   
+                testId : 0,
+                testName:"Sequence Test",
+                direction:"servo"
+            },
+        ]
+    },
+];
+
+return (
+<>
+    <nav className="static flex  z-20 bg-clip-border xl:h-20 h-15 w-full sticky top-0 shadow-xl shadow-blue-gray-900/70 bg-white p-6"> 
+        <BackIcon direction="/station/"/>
+        <h5 className="item-center inline-block antialiased tracking-normal font-sans xl:text-xl text-md font-semibold leading-snug text-gray-900">Valve Testing Page</h5>
+    </nav>
+    {
+        valveDialogContent.map(function (contentDialog){
+            return(
+                <DialogBarWithContent key={contentDialog.id} contentId={contentDialog.id} title={contentDialog.title} content={contentDialog.content} testing={contentDialog.testing}/>    
+            )
+        })
+        
+    }
+</>
   )
 }
 
