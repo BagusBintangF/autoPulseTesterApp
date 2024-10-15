@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom'
 import RunIcon from '../../elements/runIcon'
 
 const IndicatorBar = (props) => {
-  var backgroundColor = "bg-red-500"
+  var backgroundColor = "bg-rose-500"
 
   if(props.sensorState == 1){
       backgroundColor = "bg-green-500"
   }
   else{
-      backgroundColor = "bg-red-500"
+      backgroundColor = "bg-rose-400"
   }
 
   return (

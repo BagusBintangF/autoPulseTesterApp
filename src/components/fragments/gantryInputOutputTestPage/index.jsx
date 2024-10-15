@@ -7,8 +7,6 @@ import IndicatorBar from '../indicatorBar';
 
 const GantryIoTestPage = (props) => {
     
-    const stateArray = [0,0,0]
-
     const gantryOutputDialogContent=[
         {
             id:"output",
@@ -53,14 +51,6 @@ const GantryIoTestPage = (props) => {
 
     const [sensorState, setSensorState] = useState([])
 
-    const updateSensorState = (newData) => {
-        setSensorState(prevState => {
-           return prevState.map(sensor => 
-              sensor.sensorId === newData.sensorId ? { ...sensor, ...newData } : sensor
-           );
-        });
-     };
-
     const fetchPost = async (id) => {
         try {
            const response = await fetch(`http://127.0.0.1:8000/sensor/${id}`);
@@ -68,21 +58,17 @@ const GantryIoTestPage = (props) => {
               throw new Error('Network response was not ok');
            }
            const data = await response.json();
-           console.log(data);
            setSensorState(prevState => {
             const sensorExists = prevState.find(sensor => sensor.sensorId === data.sensorId);
 
             if (sensorExists) {
-                // Jika sensor ditemukan, periksa apakah ada perubahan
                 return prevState.map(sensor => 
                     sensor.sensorId === data.sensorId ? { ...sensor, ...data } : sensor
                 );
             } else {
-                // Jika sensor tidak ada, tambahkan ke array
                 return [...prevState, data];
             }
-         }); // Menambah data ke array state
-        //   updateSensorState([data])
+         });
         } catch (error) {
            console.error('Fetch error:', error);
         }
@@ -95,7 +81,7 @@ const GantryIoTestPage = (props) => {
                  await fetchPost(testingFetch.sensorId);
               }
            }
-        }, 250);
+        }, 100);
      
         return () => clearInterval(timeoutId);
      }, []);
@@ -114,20 +100,20 @@ const GantryIoTestPage = (props) => {
             })
             
         }
-        {/* {
+        {
             gantryInputDialogContent.map(function (contentDialogInput){
                 return(
-                    <DialogBarWithIndicator key={contentDialogInput.id} contentId={contentDialogInput.id} title={contentDialogInput.title} content={contentDialogInput.content} testing={contentDialogInput.testing}/>    
+                    <DialogBarWithIndicator key={contentDialogInput.id} contentId={contentDialogInput.id} title={contentDialogInput.title} content={contentDialogInput.content} testing={sensorState}/>    
                 )
             })
             
-        } */}
+        }
         {
-            sensorState.map((testingDialog) => {
-                return(
-                    <IndicatorBar key={`${testingDialog.boarName}${testingDialog.sensorId}`} progressBarName={testingDialog.boarName} sensorState={testingDialog.isOn} />   
-                )
-            },[sensorState])
+            // sensorState.map((testingDialog) => {
+            //     return(
+            //         <IndicatorBar key={`${testingDialog.boarName}${testingDialog.sensorId}`} progressBarName={testingDialog.boarName} sensorState={testingDialog.isOn} />   
+            //     )
+            // },[sensorState])
             
         }
     </>

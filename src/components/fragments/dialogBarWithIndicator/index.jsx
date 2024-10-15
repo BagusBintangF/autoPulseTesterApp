@@ -9,7 +9,7 @@ const DialogBarWithIndicator = (props) => {
         {
           props.testing.map(function (testingDialog){
             return(
-              <IndicatorBar key={`${testingDialog.boardId}${testingDialog.sensorId}`} progressBarName={testingDialog.testName} sensorState={testingDialog.isOn} />
+              <IndicatorBar key={`${testingDialog.boarName}${testingDialog.sensorId}`} progressBarName={testingDialog.boarName} sensorState={testingDialog.isOn} />  
             )
           })
         }
