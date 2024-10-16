@@ -108,14 +108,6 @@ const GantryIoTestPage = (props) => {
             })
             
         }
-        {
-            // sensorState.map((testingDialog) => {
-            //     return(
-            //         <IndicatorBar key={`${testingDialog.boarName}${testingDialog.sensorId}`} progressBarName={testingDialog.boarName} sensorState={testingDialog.isOn} />   
-            //     )
-            // },[sensorState])
-            
-        }
     </>
   )
 }
