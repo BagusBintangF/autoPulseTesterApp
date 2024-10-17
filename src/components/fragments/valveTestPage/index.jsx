@@ -1,6 +1,7 @@
 import React from 'react'
 import BackIcon from '../../elements/backIcon';
 import DialogBarWithContent from '../dialogBarWithContent';
+import ToggleBar from '../toggleBar';
 
 const ValveTestPage = () => {
   const valveDialogContent=[
@@ -83,6 +84,7 @@ return (
         })
         
     }
+    <ToggleBar/>
 </>
   )
 }
