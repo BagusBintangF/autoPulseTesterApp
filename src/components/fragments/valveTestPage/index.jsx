@@ -36,7 +36,7 @@ const ValveTestPage = () => {
             {
                 testId : 1,
                 testName:"Sequence Test",
-                direction:"homing",
+                direction:"valve-test/running/1",
             } 
         ]
     },
@@ -53,7 +53,7 @@ const ValveTestPage = () => {
             {
                 testId : 1,
                 testName:"Sequence Test",
-                direction:"homing",
+                direction:"valve-test/running/2",
             } 
         ]            
     },
@@ -70,7 +70,7 @@ const ValveTestPage = () => {
             {
                 testId : 1,
                 testName:"Sequence Test",
-                direction:"homing",
+                direction:"valve-test/running/3",
             } 
         ]
     },
