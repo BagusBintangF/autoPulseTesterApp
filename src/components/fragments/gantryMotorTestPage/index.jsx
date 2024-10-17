@@ -13,12 +13,12 @@ const GantryMotorTestPage = (props) => {
                 {   
                     testId : 0,
                     testName:"Sequence Test",
-                    direction:"sequence"
+                    direction:"motor-test/sequence/0"
                 },
                 {
                     testId : 1,
                     testName:"Homing Test",
-                    direction:"homing",
+                    direction:"motor-test/homing/0",
                 } 
             ]
         },
@@ -30,12 +30,12 @@ const GantryMotorTestPage = (props) => {
                 {   
                     testId : 0,
                     testName:"Sequence Test",
-                    direction:"sequence"
+                    direction:"motor-test/sequence/1"
                 },
                 {
                     testId : 1,
                     testName:"Homing Test",
-                    direction:"homing",
+                    direction:"motor-test/homing/1",
                 } 
             ]
         },
@@ -47,12 +47,12 @@ const GantryMotorTestPage = (props) => {
                 {   
                     testId : 0,
                     testName:"Sequence Test",
-                    direction:"sequence"
+                    direction:"motor-test/sequence/2"
                 },
                 {
                     testId : 1,
                     testName:"Homing Test",
-                    direction:"homing",
+                    direction:"motor-test/homing/2",
                 } 
             ]            
         },
@@ -64,7 +64,7 @@ const GantryMotorTestPage = (props) => {
                 {   
                     testId : 0,
                     testName:"Sequence Test",
-                    direction:"servo"
+                    direction:"motor-test/servo"
                 },
             ]
         },
