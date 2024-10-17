@@ -85,22 +85,18 @@ return (
     {
         valveDialogContent.map(function (contentDialog){
             return(
-                <div key={contentDialog.contentId} className="relative xl:w-[25rem] w-full m-6 rounded bg-white text-gray-700 p-5 shadow-xl shadow-blue-gray-900/5">
+                <div key={contentDialog.id} className="relative xl:w-[25rem] w-full m-6 rounded bg-white text-gray-700 p-5 shadow-xl shadow-blue-gray-900/5">
                     <h2 className="font-semibold p-2">{contentDialog.title}</h2>
                     <p className="p-2 text-justify">{contentDialog.content}</p>
                     {
                     contentDialog.testing.map(function (testingDialog){
-                        return(
-                            <>  
-                                {
-                                    testingDialog.testId===0 && <ToggleBar key={testingDialog.testId} progressBarName={testingDialog.testName} direction={testingDialog.direction}/>
-                                }
-                                {
-                                    testingDialog.testId===1 && <SequenceBar key={`${contentDialog.contentId}${testingDialog.testId}`} progressBarName={testingDialog.testName} contentId={contentDialog.contentId} direction={testingDialog.direction}/>
-                                }
-                                
-                            </>
-                        )
+                        if(testingDialog.testId===0){
+                            return <ToggleBar key={`${contentDialog.id}${testingDialog.testName}${testingDialog.testId}`} contentId = {contentDialog.id} progressBarName={testingDialog.testName} direction={testingDialog.direction}/>
+                        }
+                        if(testingDialog.testId===1){
+                            return <SequenceBar key={`${contentDialog.id}${testingDialog.testName}${testingDialog.testId}`} progressBarName={testingDialog.testName} contentId={contentDialog.contentId} direction={testingDialog.direction}/>
+                        }
+                        return null
                     })
                     }
                 </div>   
