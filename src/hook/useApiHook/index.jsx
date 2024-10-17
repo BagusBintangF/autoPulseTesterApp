@@ -1,30 +1,20 @@
 import {useState, useEffect} from 'react'
 import axios from 'axios'
 
-axios.defaults.baseURL = 'http://127.0.0.1:8000'
+const UseApiHook = async (direction,state = null) => {
+  try{
+    const response = await fetch(`http://127.0.0.1:8000/${direction}${state}`)
 
-const UseApiHook = ({url, method, body = null, headers = null}) => {
-  
-  const [response, setResponse] = useState(null);
-  const [error, setError] = useState('');
+    if(!response.ok){
+      throw new Error("There's something wrong")
+    }
+    
+    const data = await response.json()
 
-  const fetchData = () =>{
-    axios[method](url, JSON.parse(headers), JSON.parse(body))
-        .then((res)=>{
-            setResponse(res.data);
-        })
-        .catch((err)=>{
-            setError(err);
-        })  
   }
-
-  useEffect(()=>{
-    fetchData();
-  }, [method,url,body,headers]);
-
-  return (
-    {response, error}
-  )
+  catch(err){
+    console.error("Fail error:",err)
+  }
 }
 
 export default UseApiHook

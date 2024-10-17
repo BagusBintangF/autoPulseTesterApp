@@ -2,6 +2,7 @@ import React from 'react'
 import BackIcon from '../../elements/backIcon';
 import DialogBarWithContent from '../dialogBarWithContent';
 import ToggleBar from '../toggleBar';
+import SequenceBar from '../sequenceBar';
 
 const ValveTestPage = () => {
   const valveDialogContent=[
@@ -12,13 +13,13 @@ const ValveTestPage = () => {
         testing:[
             {   
                 testId : 0,
-                testName:"Sequence Test",
-                direction:"sequence"
+                testName:"On Off Test",
+                direction:"valve-test/on-off/0/"
             },
             {
                 testId : 1,
-                testName:"Homing Test",
-                direction:"homing",
+                testName:"Sequence Test",
+                direction:"valve-test/running/0",
             } 
         ]
     },
@@ -29,12 +30,12 @@ const ValveTestPage = () => {
         testing:[
             {   
                 testId : 0,
-                testName:"Sequence Test",
-                direction:"sequence"
+                testName:"On Off Test",
+                direction:"valve-test/on-off/1/"
             },
             {
                 testId : 1,
-                testName:"Homing Test",
+                testName:"Sequence Test",
                 direction:"homing",
             } 
         ]
@@ -46,12 +47,12 @@ const ValveTestPage = () => {
         testing:[
             {   
                 testId : 0,
-                testName:"Sequence Test",
-                direction:"sequence"
+                testName:"On Off Test",
+                direction:"valve-test/on-off/2/"
             },
             {
                 testId : 1,
-                testName:"Homing Test",
+                testName:"Sequence Test",
                 direction:"homing",
             } 
         ]            
@@ -63,9 +64,14 @@ const ValveTestPage = () => {
         testing:[
             {   
                 testId : 0,
-                testName:"Sequence Test",
-                direction:"servo"
+                testName:"On Off Test",
+                direction:"valve-test/on-off/3/"
             },
+            {
+                testId : 1,
+                testName:"Sequence Test",
+                direction:"homing",
+            } 
         ]
     },
 ];
@@ -79,12 +85,30 @@ return (
     {
         valveDialogContent.map(function (contentDialog){
             return(
-                <DialogBarWithContent key={contentDialog.id} contentId={contentDialog.id} title={contentDialog.title} content={contentDialog.content} testing={contentDialog.testing}/>    
+                <div key={contentDialog.contentId} className="relative xl:w-[25rem] w-full m-6 rounded bg-white text-gray-700 p-5 shadow-xl shadow-blue-gray-900/5">
+                    <h2 className="font-semibold p-2">{contentDialog.title}</h2>
+                    <p className="p-2 text-justify">{contentDialog.content}</p>
+                    {
+                    contentDialog.testing.map(function (testingDialog){
+                        return(
+                            <>  
+                                {
+                                    testingDialog.testId===0 && <ToggleBar key={testingDialog.testId} progressBarName={testingDialog.testName} direction={testingDialog.direction}/>
+                                }
+                                {
+                                    testingDialog.testId===1 && <SequenceBar key={`${contentDialog.contentId}${testingDialog.testId}`} progressBarName={testingDialog.testName} contentId={contentDialog.contentId} direction={testingDialog.direction}/>
+                                }
+                                
+                            </>
+                        )
+                    })
+                    }
+                </div>   
             )
         })
         
     }
-    <ToggleBar/>
+    
 </>
   )
 }

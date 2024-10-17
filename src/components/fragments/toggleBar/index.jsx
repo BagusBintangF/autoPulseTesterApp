@@ -10,7 +10,7 @@ const ToggleBar = (props) => {
             
             <p className='flex-grow font-medium'>{props.progressBarName}</p>
             <Link key={`setButton${props.contentId}`} role="button" tabIndex="0" className='p-2' title="Run">
-                <ToggleSwitch/>
+                <ToggleSwitch direction = {props.direction}/>
             </Link>
         </div>
         {/* <div key={`precentage${props.contentId}`} className="w-full bg-gray-200 rounded-full h-4.5 dark:bg-gray-700">
