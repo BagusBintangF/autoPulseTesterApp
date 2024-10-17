@@ -6,7 +6,7 @@ import DialogBarWithIndicator from '../dialogBarWithIndicator';
 import IndicatorBar from '../indicatorBar';
 
 const GantryIoTestPage = (props) => {
-    
+    const [sensorState, setSensorState] = useState([])
     const gantryOutputDialogContent=[
         {
             id:"output",
@@ -49,11 +49,9 @@ const GantryIoTestPage = (props) => {
         },
     ];
 
-    const [sensorState, setSensorState] = useState([])
-
     const fetchPost = async (id) => {
         try {
-           const response = await fetch(`http://127.0.0.1:8000/sensor/${id}`);
+           const response = await fetch(`http://127.0.0.1:8000/sensor-gantry/${id}`);
            if (!response.ok) {
               throw new Error('Network response was not ok');
            }
