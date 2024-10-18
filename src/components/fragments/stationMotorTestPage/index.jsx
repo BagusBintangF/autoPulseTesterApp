@@ -10,13 +10,8 @@ const StationMotorTestPage = (props) => {
             title:"Testing Motor 1",
             content:"Page untuk test limit switch pada station",
             testing:[
-                {   
-                    testId : 0,
-                    testName:"Sequence Test",
-                    direction:"motor-test/sequence/0"
-                },
                 {
-                    testId : 1,
+                    testId : 0,
                     testName:"Homing Test",
                     direction:"motor-test/homing/0",
                 } 
@@ -27,13 +22,8 @@ const StationMotorTestPage = (props) => {
             title:"Testing Motor 2",
             content:"Page untuk test Pressure Vaccum Sensor pada station",
             testing:[
-                {   
-                    testId : 0,
-                    testName:"Sequence Test",
-                    direction:"motor-test/sequence/1"
-                },
                 {
-                    testId : 1,
+                    testId : 0,
                     testName:"Homing Test",
                     direction:"motor-test/homing/1",
                 } 
@@ -44,14 +34,9 @@ const StationMotorTestPage = (props) => {
             title:"Testing Motor DC",
             content:"Page untuk test Pressure Vaccum Sensor pada station",
             testing:[
-                {   
-                    testId : 0,
-                    testName:"Sequence Test",
-                    direction:"motor-test/sequence/2"
-                },
                 {
-                    testId : 1,
-                    testName:"Homing Test",
+                    testId : 0,
+                    testName:"Rotate Test",
                     direction:"motor-test/homing/2",
                 } 
             ]            
