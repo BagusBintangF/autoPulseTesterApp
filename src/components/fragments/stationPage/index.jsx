@@ -7,12 +7,13 @@ const StationPage = (props) => {
             id:1,
             title:"Valve Test",
             content:"Page untuk test valve pada station",
-            direction:"valve-test",
+            direction:"valve-test/",
         },
         {
             id:2,
             title:"Switch Test",
-            content:"Page untuk test limit switch pada station"
+            content:"Page untuk test limit switch pada station",
+            direction:"switch-test/",
         },
         {
             id:3,
@@ -27,7 +28,8 @@ const StationPage = (props) => {
         {
             id:5,
             title:"Motor Test",
-            content:"Page untuk test Motor pada station"
+            content:"Page untuk test Motor pada station",
+            direction:"motor-test/",
         },
     ];
 

@@ -9,10 +9,12 @@ import StationPage from './components/fragments/stationPage/index.jsx'
 import SideBar from './components/fragments/sideBar/index.jsx'
 import GantryPage from './components/fragments/gantryPage/index.jsx'
 import ErrorPage from './components/pages/errorPage/index.jsx'
-import ValveTestPage from './components/fragments/valveTestPage/index.jsx'
+import ValveTestPage from './components/fragments/stationValveTestPage/index.jsx'
 import EepromPage from './components/fragments/eepromPage/index.jsx'
 import GantryMotorTestPage from './components/fragments/gantryMotorTestPage/index.jsx'
 import GantryIoTestPage from './components/fragments/gantryInputOutputTestPage/index.jsx'
+import StationSwitchTestPage from './components/fragments/stationSwitchTestPage/index.jsx'
+import StationMotorTestPage from './components/fragments/stationMotorTestPage/index.jsx'
 
 function App() {
   
@@ -42,6 +44,14 @@ function App() {
           {
             path:"station/valve-test/",
             element:<ValveTestPage/>,
+          },
+          {
+            path:"station/switch-test/",
+            element:<StationSwitchTestPage/>,
+          },
+          {
+            path:"station/motor-test/",
+            element:<StationMotorTestPage/>,
           },
           {
             path:"eeprom/",
