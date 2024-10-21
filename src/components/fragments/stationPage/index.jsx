@@ -18,7 +18,8 @@ const StationPage = (props) => {
         {
             id:3,
             title:"Pressure Vaccum Sensor Test",
-            content:"Page untuk test Pressure Vaccum Sensor pada station"
+            content:"Page untuk test Pressure Vaccum Sensor pada station",
+            direction:"pressure-test/",
         },
         {
             id:4,

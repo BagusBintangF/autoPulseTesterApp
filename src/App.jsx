@@ -15,6 +15,7 @@ import GantryMotorTestPage from './components/fragments/gantryMotorTestPage/inde
 import GantryIoTestPage from './components/fragments/gantryInputOutputTestPage/index.jsx'
 import StationSwitchTestPage from './components/fragments/stationSwitchTestPage/index.jsx'
 import StationMotorTestPage from './components/fragments/stationMotorTestPage/index.jsx'
+import StationPressureVaccumTestPage from './components/fragments/stationPressureVaccumTestPage/index.jsx'
 
 function App() {
   
@@ -48,6 +49,10 @@ function App() {
           {
             path:"station/switch-test/",
             element:<StationSwitchTestPage/>,
+          },
+          {
+            path:"station/pressure-test/",
+            element:<StationPressureVaccumTestPage/>,
           },
           {
             path:"station/motor-test/",

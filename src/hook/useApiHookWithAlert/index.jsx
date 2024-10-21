@@ -13,7 +13,7 @@ const UseApiHookWithAlert = async (direction,state) => {
     }
     
     const data = await response.json()
-    alert(`${data.message}`)
+    alert(`${data.deviceName} - ${data.message}: ${data.status}`)
   }
   catch(err){
     console.error("Fail error:",err)

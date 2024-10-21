@@ -2,6 +2,7 @@ import React from 'react'
 import DialogBar from '../dialogBar';
 import DialogBarWithContent from '../dialogBarWithContent';
 import BackIcon from '../../elements/backIcon';
+import ToggleBar from '../toggleBar';
 
 const StationMotorTestPage = (props) => {
     const stationMotorDialogContent=[
@@ -13,7 +14,7 @@ const StationMotorTestPage = (props) => {
                 {
                     testId : 0,
                     testName:"Homing Test",
-                    direction:"motor-test/homing/0",
+                    direction:"motor-test/homing/3",
                 } 
             ]
         },
@@ -25,7 +26,7 @@ const StationMotorTestPage = (props) => {
                 {
                     testId : 0,
                     testName:"Homing Test",
-                    direction:"motor-test/homing/1",
+                    direction:"motor-test/homing/4",
                 } 
             ]
         },
@@ -37,7 +38,7 @@ const StationMotorTestPage = (props) => {
                 {
                     testId : 0,
                     testName:"Rotate Test",
-                    direction:"motor-test/homing/2",
+                    direction:"motor-test/dc/6/",
                 } 
             ]            
         },
@@ -51,9 +52,26 @@ const StationMotorTestPage = (props) => {
         </nav>
         {
             stationMotorDialogContent.map(function (contentDialog){
-                return(
-                    <DialogBarWithContent key={contentDialog.id} contentId={contentDialog.id} title={contentDialog.title} content={contentDialog.content} testing={contentDialog.testing}/>    
-                )
+                if(contentDialog.id != 2){
+                    return(
+                        <DialogBarWithContent key={contentDialog.id} contentId={contentDialog.id} title={contentDialog.title} content={contentDialog.content} testing={contentDialog.testing}/>    
+                    )
+                }
+                else{
+                    return(
+                    <div key={contentDialog.id} className="relative xl:w-[25rem] w-full m-6 rounded bg-white text-gray-700 p-5 shadow-xl shadow-blue-gray-900/5">
+                        <h2 className="font-semibold p-2">{contentDialog.title}</h2>
+                        <p className="p-2 text-justify">{contentDialog.content}</p>
+                        {
+                            contentDialog.testing.map(function (testingDialog){
+                                return(
+                                    <ToggleBar key={`${contentDialog.id}${testingDialog.testName}${testingDialog.testId}`} contentId = {contentDialog.id} progressBarName={testingDialog.testName} direction={testingDialog.direction}/>
+                                )
+                            })
+                        }
+                    </div>
+                    )
+                }
             }) 
         }
     </>
