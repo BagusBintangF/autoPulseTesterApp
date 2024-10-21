@@ -24,7 +24,8 @@ const StationPage = (props) => {
         {
             id:4,
             title:"Load Cell Test",
-            content:"Page untuk test Load Cell pada station"
+            content:"Page untuk test Load Cell pada station",
+            direction:"loadcell-test/",
         },
         {
             id:5,

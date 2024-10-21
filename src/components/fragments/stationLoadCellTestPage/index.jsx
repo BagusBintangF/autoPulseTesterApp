@@ -3,7 +3,7 @@ import DialogBar from '../dialogBar';
 import DialogBarWithContent from '../dialogBarWithContent';
 import BackIcon from '../../elements/backIcon';
 
-const StationPressureVaccumTestPage = (props) => {
+const StationLoadCellTestPage = (props) => {
     const gantryMotorDialogContent=[
         {
             id:0,
@@ -12,24 +12,19 @@ const StationPressureVaccumTestPage = (props) => {
             testing:[
                 {   
                     testId : 0,
-                    testName:"Pressure Sensor 1",
+                    testName:"Load Cell 1",
                     direction:"motor-test/sequence/0"
                 },
                 {
                     testId : 1,
-                    testName:"Pressure Sensor 2",
+                    testName:"Load Cell 2",
                     direction:"motor-test/homing/0",
                 },
                 {   
                     testId : 2,
-                    testName:"Pressure Sensor 3",
+                    testName:"Load Cell 3",
                     direction:"motor-test/sequence/0"
                 },
-                {
-                    testId : 3,
-                    testName:"Vacuum Sensor 2",
-                    direction:"motor-test/homing/0",
-                } 
             ]
         },
     ];
@@ -51,4 +46,4 @@ const StationPressureVaccumTestPage = (props) => {
   )
 }
 
-export default StationPressureVaccumTestPage
+export default StationLoadCellTestPage
