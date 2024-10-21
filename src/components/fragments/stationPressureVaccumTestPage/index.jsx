@@ -13,22 +13,22 @@ const StationPressureVaccumTestPage = (props) => {
                 {   
                     testId : 0,
                     testName:"Pressure Sensor 1",
-                    direction:"motor-test/sequence/0"
+                    direction:"pressure-sensor-station/0"
                 },
                 {
                     testId : 1,
                     testName:"Pressure Sensor 2",
-                    direction:"motor-test/homing/0",
+                    direction:"pressure-sensor-station/1",
                 },
                 {   
                     testId : 2,
                     testName:"Pressure Sensor 3",
-                    direction:"motor-test/sequence/0"
+                    direction:"pressure-sensor-station/2"
                 },
                 {
                     testId : 3,
                     testName:"Vacuum Sensor 2",
-                    direction:"motor-test/homing/0",
+                    direction:"pressure-sensor-station/3",
                 } 
             ]
         },
