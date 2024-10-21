@@ -1,0 +1,18 @@
+/* HTML: <div class="loader"></div> */
+.loader {
+    width: 15px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    clip-path: inset(-45px);
+    box-shadow: -60px 15px rgb(253 115 22),-60px 15px rgb(253 115 22),-60px 15px rgb(253 115 22);
+    transform: translateY(-15px);
+    animation: l19 1s infinite linear;
+  }
+  @keyframes l19{ 
+    16.67% {box-shadow:-60px 15px rgb(253 115 22),-60px 15px rgb(253 115 22),19px 15px rgb(253 115 22)}
+    33.33% {box-shadow:-60px 15px rgb(253 115 22),  0px 15px rgb(253 115 22),19px 15px rgb(253 115 22)}
+    40%,60%{box-shadow:-19px 15px rgb(253 115 22),  0px 15px rgb(253 115 22),19px 15px rgb(253 115 22)}
+    66.67% {box-shadow:-19px 15px rgb(253 115 22),  0px 15px rgb(253 115 22),60px 15px rgb(253 115 22)}
+    83.33% {box-shadow:-19px 15px rgb(253 115 22), 60px 15px rgb(253 115 22),60px 15px rgb(253 115 22)}
+    100%   {box-shadow: 60px 15px rgb(253 115 22), 60px 15px rgb(253 115 22),60px 15px rgb(253 115 22)}
+  }
