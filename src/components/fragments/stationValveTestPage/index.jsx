@@ -3,8 +3,13 @@ import BackIcon from '../../elements/backIcon';
 import DialogBarWithContent from '../dialogBarWithContent';
 import ToggleBar from '../toggleBar';
 import SequenceBar from '../sequenceBar';
+import useApiHookWithAlertBar from '../../../hook/useApiHookWithAlert';
+import LoadingPage from '../loadingPage';
+import AlertBar from '../alertBar';
 
 const ValveTestPage = () => {
+  const {data, error, loading, showAlert, handleClose, fetchData} = useApiHookWithAlertBar()
+
   const valveDialogContent=[
     {
         id:0,
@@ -78,6 +83,9 @@ const ValveTestPage = () => {
 
 return (
 <>
+    {loading && <LoadingPage/>}
+    {error && showAlert &&(<AlertBar title="Opps !" message="Error" status={error}/>)}
+    {data && showAlert && (<AlertBar title={data.deviceName} message={data.message} status={data.status} onClose={handleClose}/>)}
     <nav className="static flex  z-20 bg-clip-border xl:h-20 h-15 w-full sticky top-0 shadow-xl shadow-blue-gray-900/70 bg-white p-6"> 
         <BackIcon direction="/station/"/>
         <h5 className="item-center inline-block antialiased tracking-normal font-sans xl:text-xl text-md font-semibold leading-snug text-gray-900">Valve Testing Page</h5>
@@ -94,7 +102,7 @@ return (
                             return <ToggleBar key={`${contentDialog.id}${testingDialog.testName}${testingDialog.testId}`} contentId = {contentDialog.id} progressBarName={testingDialog.testName} direction={testingDialog.direction}/>
                         }
                         if(testingDialog.testId===1){
-                            return <SequenceBar key={`${contentDialog.id}${testingDialog.testName}${testingDialog.testId}`} progressBarName={testingDialog.testName} contentId={contentDialog.contentId} direction={testingDialog.direction}/>
+                            return <SequenceBar key={`${contentDialog.id}${testingDialog.testName}${testingDialog.testId}`} progressBarName={testingDialog.testName} contentId={contentDialog.contentId} direction={testingDialog.direction} fetchData={fetchData}/>
                         }
                         return null
                     })
