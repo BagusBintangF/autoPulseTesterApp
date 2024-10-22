@@ -1,4 +1,4 @@
-import { CloseButton } from '@headlessui/react'
+import { CloseButton, Tab } from '@headlessui/react'
 import React from 'react'
 import ButtonSmall from '../../elements/button'
 import { Link } from 'react-router-dom'
@@ -10,7 +10,7 @@ const AlertBar = (props) => {
             <h1 className="text-xl font-bold pt-2 pb-2"> {props.title}</h1>
             <span className="flex flex-row">
                 <h2 className='text-md font-normal pt-2'>{`${props.message} : `}</h2>
-                <h2 className='text-md font-semibold pt-2'>{props.status}</h2>
+                <h2 className='text-md font-semibold pl-1 pt-2'>{props.status}</h2>
             </span>
             <span className="absolute p-2 bottom-5 right-5">
                 <Link onClick={props.onClose}>
