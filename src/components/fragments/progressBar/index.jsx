@@ -14,11 +14,11 @@ const ProgressBar = (props) => {
             <div className='flex'>
                 
                 <p className='flex-grow font-medium'>{props.progressBarName}</p>
-                <Link key={`setButton${props.contentId}`} role="button" tabIndex="0" className='p-2' title="Upload Config" onClick={()=>SetEepromConfig(props.contentId)}>
+                <Link key={`setButton${props.contentId}`} role="button" tabIndex="0" className='p-2' title="Upload Config" onClick={()=>props.fetchData(props.setDirection)}>
                     <UploadIcon/>
                 </Link>
 
-                <Link key={`cekButton${props.contentId}`} role="button" tabIndex="0" className='p-2' title="Cek Config" onClick={()=>CompareEepromConfig(props.contentId)}>
+                <Link key={`cekButton${props.contentId}`} role="button" tabIndex="0" className='p-2' title="Cek Config" onClick={()=>props.fetchData(props.compareDirection)}>
                     <CheckIcon/>
                 </Link>
                 
