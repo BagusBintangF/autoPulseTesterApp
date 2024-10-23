@@ -32,7 +32,7 @@ const StationPressureVaccumTestPage = (props) => {
                 },
                 {
                     testId : 3,
-                    testName:"Vacuum Sensor 2",
+                    testName:"Vacuum Sensor 1",
                     direction:"pressure-sensor-station/3",
                 } 
             ]
