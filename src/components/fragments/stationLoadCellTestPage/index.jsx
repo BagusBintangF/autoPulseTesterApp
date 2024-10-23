@@ -12,8 +12,8 @@ const StationLoadCellTestPage = (props) => {
     const gantryMotorDialogContent=[
         {
             id:0,
-            title:"Testing Station Sensor",
-            content:"Page untuk test limit switch pada station",
+            title:"Testing Load Cell Station",
+            content:"Klik tombol Run lalu tunggu beberapa saat hingga proses selesai, perhatikan informasi yang muncul pada Alert Bar, Load Cell dikatakan baik jika muncul notifikasi Load Cell : GOOD",
             testing:[
                 {   
                     testId : 0,

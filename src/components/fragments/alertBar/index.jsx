@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 const AlertBar = (props) => {
   return (
-    <div className="absolute flex justify-center w-full h-full z-30 ">
+    <div className="fixed flex justify-center w-full h-full z-30 top-32">
         <div className="w-[24rem] h-[12rem] rounded bg-white text-gray-700 p-5 shadow-xl shadow-blue-gray-900/5 sticky top-32">
             <h1 className="text-xl font-bold pt-2 pb-2"> {props.title}</h1>
             <span className="flex flex-row">

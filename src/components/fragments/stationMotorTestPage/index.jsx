@@ -14,7 +14,7 @@ const StationMotorTestPage = (props) => {
         {
             id:0,
             title:"Testing Motor 1",
-            content:"Page untuk test limit switch pada station",
+            content:"Klik tombol Run lalu pastikan motor bergerak secara perlahan sampai Limit Switch Homing aktif",
             testing:[
                 {
                     testId : 0,
@@ -26,7 +26,7 @@ const StationMotorTestPage = (props) => {
         {
             id:1,
             title:"Testing Motor 2",
-            content:"Page untuk test Pressure Vaccum Sensor pada station",
+            content:"Klik tombol Run lalu pastikan motor bergerak secara perlahan sampai Limit Switch Homing aktif",
             testing:[
                 {
                     testId : 0,
@@ -38,7 +38,7 @@ const StationMotorTestPage = (props) => {
         {
             id:2,
             title:"Testing Motor DC",
-            content:"Page untuk test Pressure Vaccum Sensor pada station",
+            content:"Saat tombol Switch ditekan pada kondisi ON, perhatikan indikator pada board, dan pastikan motor berputar",
             testing:[
                 {
                     testId : 0,

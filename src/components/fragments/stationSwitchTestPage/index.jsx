@@ -11,7 +11,7 @@ const StationSwitchTestPage = (props) => {
         {
             id:"input",
             title:"Testing Switch",
-            content:"Page untuk test limit switch pada station",
+            content:"Aktifkan masing-masing switch pada station dan perhatikan perubahan pada indikator Switch",
             testing:[
                 {   
                     boardId : 5,

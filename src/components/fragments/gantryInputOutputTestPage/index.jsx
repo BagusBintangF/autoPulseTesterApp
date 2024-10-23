@@ -4,19 +4,25 @@ import DialogBarWithContent from '../dialogBarWithContent';
 import BackIcon from '../../elements/backIcon';
 import DialogBarWithIndicator from '../dialogBarWithIndicator';
 import IndicatorBar from '../indicatorBar';
+import ToggleBar from '../toggleBar';
 
 const GantryIoTestPage = (props) => {
     const [sensorState, setSensorState] = useState([])
     const gantryOutputDialogContent=[
         {
             id:"output",
-            title:"Testing LED Strip",
-            content:"Page untuk test limit switch pada station",
+            title:"Testing Output",
+            content:"Saat switch dalam keadaan ON, pastikan indikator output menyala",
             testing:[
                 {   
                     testId : 0,
-                    testName:"Sequence Test",
-                    direction:"led"
+                    testName:"LED Strip",
+                    direction:"set-brake/6/0/"
+                },
+                {   
+                    testId : 0,
+                    testName:"Z Motor Brake",
+                    direction:"set-brake/2/0/"
                 },
             ]
         },
@@ -25,7 +31,7 @@ const GantryIoTestPage = (props) => {
         {
             id:"input",
             title:"Testing Input",
-            content:"Page untuk test limit switch pada station",
+            content:"Aktifkan setiap input pada board gantry lalu perhatikan perubahan pada input indikator ",
             testing:[
                 {   
                     boardId : 3,
@@ -93,8 +99,23 @@ const GantryIoTestPage = (props) => {
         {
             gantryOutputDialogContent.map(function (contentDialogOutput){
                 return(
-                    <DialogBarWithContent key={contentDialogOutput.id} contentId={contentDialogOutput.id} title={contentDialogOutput.title} content={contentDialogOutput.content} testing={contentDialogOutput.testing}/>    
+                    <div key={contentDialogOutput.id} className="relative xl:w-[25rem] w-full m-6 rounded bg-white text-gray-700 p-5 shadow-xl shadow-blue-gray-900/5">
+                    <h2 className="font-semibold p-2">{contentDialogOutput.title}</h2>
+                    <p className="p-2 text-justify">{contentDialogOutput.content}</p>
+                    {
+                        contentDialogOutput.testing.map(function (testingDialog){
+                            return(
+                                <ToggleBar key={`${contentDialogOutput.id}${testingDialog.testName}${testingDialog.testId}`} contentId = {contentDialogOutput.id} progressBarName={testingDialog.testName} direction={testingDialog.direction}/>
+                            )
+                        })
+                    }
+
+                </div>
                 )
+
+                // return(
+                //     <DialogBarWithContent key={contentDialogOutput.id} contentId={contentDialogOutput.id} title={contentDialogOutput.title} content={contentDialogOutput.content} testing={contentDialogOutput.testing}/>    
+                // )
             })
             
         }

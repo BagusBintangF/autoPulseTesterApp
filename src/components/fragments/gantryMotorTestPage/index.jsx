@@ -8,12 +8,12 @@ import useApiHookWithAlertBar from '../../../hook/useApiHookWithAlert';
 
 const GantryMotorTestPage = (props) => {
     const {data, error, loading, showAlert, handleClose, fetchData} = useApiHookWithAlertBar()
-    
+    const contentMotorAxis = "Sequence Test akan menggerakan motor secara bolak balik, Homing Test akan menggerakan motor sampai Limit Switch Homing aktif"
     const gantryMotorDialogContent=[
         {
             id:0,
             title:"Testing Motor Y Axis",
-            content:"Page untuk test limit switch pada station",
+            content:`${contentMotorAxis}`,
             testing:[
                 {   
                     testId : 0,
@@ -30,7 +30,7 @@ const GantryMotorTestPage = (props) => {
         {
             id:1,
             title:"Testing Motor X Axis",
-            content:"Page untuk test Pressure Vaccum Sensor pada station",
+            content:`${contentMotorAxis}`,
             testing:[
                 {   
                     testId : 0,
@@ -47,7 +47,7 @@ const GantryMotorTestPage = (props) => {
         {
             id:2,
             title:"Testing Motor Z Axis",
-            content:"Page untuk test Pressure Vaccum Sensor pada station",
+            content:`${contentMotorAxis}`,
             testing:[
                 {   
                     testId : 0,
@@ -64,7 +64,7 @@ const GantryMotorTestPage = (props) => {
         {
             id:3,
             title:"Testing Servo",
-            content:"Page untuk test Pressure Vaccum Sensor pada station",
+            content:"Sequence Test akan menjalankan motor secara bolak balik",
             testing:[
                 {   
                     testId : 0,

@@ -6,13 +6,13 @@ const GantryPage = (props) => {
         {
             id:1,
             title:"Testing Motor",
-            content:"Page untuk test limit switch pada station",
+            content:"Page untuk test motor pada gantry board",
             direction : "motor-test"
         },
         {
             id:2,
             title:"Testing Input/Output",
-            content:"Page untuk test Pressure Vaccum Sensor pada station",
+            content:"Page untuk test input output pada gantry board",
             direction : "io-test"
 
         },

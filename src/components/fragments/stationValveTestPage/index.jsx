@@ -14,7 +14,7 @@ const ValveTestPage = () => {
     {
         id:0,
         title:"Testing Front Valve",
-        content:"Page untuk test limit switch pada station",
+        content:"Klik Switch untuk menyalakan semua valve, klik tombol Run untuk mengeksekusi sequence valve, pastikan indikator valve menyala bergantian secara berurutan",
         testing:[
             {   
                 testId : 0,
@@ -31,7 +31,7 @@ const ValveTestPage = () => {
     {
         id:1,
         title:"Testing Back Valve",
-        content:"Page untuk test Pressure Vaccum Sensor pada station",
+        content:"Klik Switch untuk menyalakan semua valve, klik tombol Run untuk mengeksekusi sequence valve, pastikan indikator valve menyala bergantian secara berurutan",
         testing:[
             {   
                 testId : 0,
@@ -48,7 +48,7 @@ const ValveTestPage = () => {
     {
         id:2,
         title:"Testing Regulator Valve",
-        content:"Page untuk test Pressure Vaccum Sensor pada station",
+        content:"Klik Switch untuk menyalakan semua valve, klik tombol Run untuk mengeksekusi sequence valve, pastikan indikator valve menyala bergantian secara berurutan",
         testing:[
             {   
                 testId : 0,
@@ -65,7 +65,7 @@ const ValveTestPage = () => {
     {
         id:3,
         title:"Testing Air Control Valve",
-        content:"Page untuk test Pressure Vaccum Sensor pada station",
+        content:"Klik Switch untuk menyalakan semua valve, klik tombol Run untuk mengeksekusi sequence valve, pastikan indikator valve menyala bergantian secara berurutan",
         testing:[
             {   
                 testId : 0,

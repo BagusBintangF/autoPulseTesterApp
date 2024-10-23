@@ -13,7 +13,7 @@ const StationPressureVaccumTestPage = (props) => {
         {
             id:0,
             title:"Testing Station Sensor",
-            content:"Page untuk test limit switch pada station",
+            content:"Klik tombol Run untuk menjalankan verivikasi sensor, perhatikan pesan pada Alert Bar, sensor dikatakan baik jika terdapat pesan Pressure Sensor : GOOD",
             testing:[
                 {   
                     testId : 0,
