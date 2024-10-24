@@ -104,7 +104,7 @@ const EepromPage = () => {
     return (
     <>
         {connectLoading && <LoadingPage/> || loading && <LoadingPage/>}
-        {error && showAlert &&(<AlertBar title="Opps !" message="Error" status={error}/>)}
+        {error && showAlert &&(<AlertBar title="Opps !" message="Error" status={error} onClose={handleClose}/>)}
         {data && showAlert && (<AlertBar title={data.deviceName} message={data.message} status={data.status} onClose={handleClose}/>)}
         <nav key="eepromPageNav" className="relative z-20 bg-clip-border xl:h-20 h-15 w-full sticky top-0 right-0 shadow-xl shadow-blue-gray-900/70 bg-white p-6"> 
             <h5 className="block antialiased tracking-normal font-sans xl:text-xl text-md font-semibold leading-snug text-gray-900">Setting EEPROM</h5>

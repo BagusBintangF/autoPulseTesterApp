@@ -42,7 +42,7 @@ const StationPressureVaccumTestPage = (props) => {
     return (
     <>
         {loading && <LoadingPage/>}
-        {error && showAlert &&(<AlertBar title="Opps !" message="Error" status={error}/>)}
+        {error && showAlert &&(<AlertBar title="Opps !" message="Error" status={error} onClose={handleClose}/>)}
         {data && showAlert && (<AlertBar title={data.deviceName} message={data.message} status={data.status} onClose={handleClose}/>)}
         <nav className="static flex  z-20 bg-clip-border xl:h-20 h-15 w-full sticky top-0 shadow-xl shadow-blue-gray-900/70 bg-white p-6"> 
             <BackIcon direction="/station/"/>
