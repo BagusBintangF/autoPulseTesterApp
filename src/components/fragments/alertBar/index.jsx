@@ -1,4 +1,3 @@
-import { CloseButton, Tab } from '@headlessui/react'
 import React from 'react'
 import ButtonSmall from '../../elements/button'
 import { Link } from 'react-router-dom'

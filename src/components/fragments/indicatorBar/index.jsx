@@ -1,7 +1,4 @@
 import React, { useState } from 'react'
-import MotorSequence from '../../../hook/motorSequence'
-import { Link } from 'react-router-dom'
-import RunIcon from '../../elements/runIcon'
 
 const IndicatorBar = (props) => {
   var backgroundColor = "bg-rose-500"

@@ -1,9 +1,6 @@
 import React from 'react'
-import MotorSequence from '../../../hook/motorSequence'
 import { Link } from 'react-router-dom'
 import RunIcon from '../../elements/runIcon'
-import UseApiHookWithAlert from '../../../hook/useApiHookWithAlert'
-import useApiHookWithAlertBar from '../../../hook/useApiHookWithAlert'
 
 const SequenceBar = (props) => {
   

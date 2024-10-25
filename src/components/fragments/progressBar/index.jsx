@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import UseApiHook from '../../../hook/useApiHook'
-import SetEepromConfig from '../../../hook/setEepromConfig'
-import CompareEepromConfig from '../../../hook/compareEepromConfig'
 import ConnectIndicator from '../../elements/connectIndicator'
 import UploadIcon from '../../elements/uploadIcon'
 import CheckIcon from '../../elements/checkIcon'

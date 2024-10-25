@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import DialogBar from '../dialogBar';
-import DialogBarWithContent from '../dialogBarWithContent';
 import BackIcon from '../../elements/backIcon';
 import DialogBarWithIndicator from '../dialogBarWithIndicator';
-import IndicatorBar from '../indicatorBar';
 import ToggleBar from '../toggleBar';
 
 const GantryIoTestPage = (props) => {
