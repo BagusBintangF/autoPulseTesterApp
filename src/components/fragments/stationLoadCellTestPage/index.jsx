@@ -31,7 +31,7 @@ const StationLoadCellTestPage = (props) => {
                     direction:"load-cell-station/2"
                 },
             ]
-        },
+        }, 
     ];
 
     return (

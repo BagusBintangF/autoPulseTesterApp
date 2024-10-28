@@ -5,6 +5,8 @@ import StationIcon from '../../elements/stationIcon'
 import GantryIcon from '../../elements/gantryIcon'
 import RebootIcon from '../../elements/rebootIcon'
 import ShutdownIcon from '../../elements/shutdownIcon'
+import useApiHookWithAlertBar from '../../../hook/useApiHookWithAlert'
+import UseApiHook from '../../../hook/useApiHook'
 
 const SideBar = () => {
   return (
@@ -35,13 +37,13 @@ const SideBar = () => {
             </nav>
             <div className='absolute bottom-[1rem] xl:min-w-[14rem] min-w-[9rem]'>
                 <nav className="flex flex-col static  gap-1 xl:min-w-[240px] min-w-[100px] xl:p-2 p-0.5 font-sans xl:text-base text-sm font-normal text-gray-100" >
-                <Link to={'gantry/'} role="button" tabIndex="0" className="flex items-center w-full xl:p-3 p-1 pt-3 pb-3 xl:rounded-lg rounded-md text-start leading-tight transition-all hover:bg-blue-50 hover:bg-opacity-80 focus:bg-blue-50 focus:bg-opacity-80 active:bg-blue-50 active:bg-opacity-80 hover:text-blue-900 focus:text-blue-900 active:text-blue-900 outline-none">
+                <Link onClick={() => UseApiHook("reboot-device")} role="button" tabIndex="0" className="flex items-center w-full xl:p-3 p-1 pt-3 pb-3 xl:rounded-lg rounded-md text-start leading-tight transition-all hover:bg-blue-50 hover:bg-opacity-80 focus:bg-blue-50 focus:bg-opacity-80 active:bg-blue-50 active:bg-opacity-80 hover:text-blue-900 focus:text-blue-900 active:text-blue-900 outline-none">
                 <div className="grid place-items-center mr-4">
                     <RebootIcon/>
                 </div>
                 Reboot
                 </Link>
-                <Link to={'gantry/'} role="button" tabIndex="0" className="flex items-center w-full xl:p-3 p-1 pt-3 pb-3 xl:rounded-lg rounded-md text-start leading-tight transition-all hover:bg-blue-50 hover:bg-opacity-80 focus:bg-blue-50 focus:bg-opacity-80 active:bg-blue-50 active:bg-opacity-80 hover:text-blue-900 focus:text-blue-900 active:text-blue-900 outline-none">
+                <Link onClick={()=> UseApiHook("shutdown-device")} role="button" tabIndex="0" className="flex items-center w-full xl:p-3 p-1 pt-3 pb-3 xl:rounded-lg rounded-md text-start leading-tight transition-all hover:bg-blue-50 hover:bg-opacity-80 focus:bg-blue-50 focus:bg-opacity-80 active:bg-blue-50 active:bg-opacity-80 hover:text-blue-900 focus:text-blue-900 active:text-blue-900 outline-none">
                 <div className="grid place-items-center mr-4">
                     <ShutdownIcon/>
                 </div>
