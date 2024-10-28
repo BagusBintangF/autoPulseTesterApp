@@ -6,7 +6,6 @@ import {
   RouterProvider,
 } from "react-router-dom"
 import StationPage from './components/fragments/stationPage/index.jsx'
-import SideBar from './components/fragments/sideBar/index.jsx'
 import GantryPage from './components/fragments/gantryPage/index.jsx'
 import ErrorPage from './components/pages/errorPage/index.jsx'
 import ValveTestPage from './components/fragments/stationValveTestPage/index.jsx'
@@ -17,6 +16,7 @@ import StationSwitchTestPage from './components/fragments/stationSwitchTestPage/
 import StationMotorTestPage from './components/fragments/stationMotorTestPage/index.jsx'
 import StationPressureVaccumTestPage from './components/fragments/stationPressureVaccumTestPage/index.jsx'
 import StationLoadCellTestPage from './components/fragments/stationLoadCellTestPage/index.jsx'
+import { GlobalProvider } from './hook/globalContext/index.jsx'
 
 function App() {
   
@@ -73,7 +73,10 @@ function App() {
   );
 
   return (
-    <RouterProvider router={router}/>
+    <GlobalProvider>
+      <RouterProvider router={router}/>
+    </GlobalProvider>
+    
   )
 }
 

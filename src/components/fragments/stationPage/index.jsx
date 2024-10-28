@@ -1,8 +1,22 @@
-import React from 'react'
+import React, {useState} from 'react'
 import DialogBar from '../dialogBar';
 import ComboBoxDefault from '../../elements/comboBox';
 
+
 const StationPage = (props) => {
+    const stationName = [
+        {
+            "id" : 0,
+            "name" : "Concentrating Station",
+            "direction" : 4,
+        },
+        {
+            "id" : 1,
+            "name" : "Cleaning Station",
+            "direction" : 5,
+        },
+    
+    ]
     const stationDialogContent=[
         {
             id:1,
@@ -43,8 +57,7 @@ const StationPage = (props) => {
         </nav>
         <div className=' flex m-6 h-24 xl:w-[64rem] w-full rounded bg-white text-gray-700 p-5 shadow-xl shadow-blue-gray-900/5'>
                 <p className='font-medium grow'>Pilih Tipe Station</p>
-                <ComboBoxDefault/>
-                
+                <ComboBoxDefault nameArray={stationName}/>    
         </div>
         {
             stationDialogContent.map(function (contentDialog){
@@ -56,6 +69,7 @@ const StationPage = (props) => {
         }
 
     </>
+    
   )
 }
 

@@ -1,35 +1,36 @@
-import React, { useState } from 'react'
+import React, {useState} from 'react'
 import { Combobox, ComboboxInput, ComboboxOption, ComboboxOptions, ComboboxButton } from '@headlessui/react'
 import { CheckIcon, ChevronDownIcon } from '@heroicons/react/20/solid'
+import directionIdentifier from '../../../hook/directionIdentifier'
+import { useGlobalContext } from '../../../hook/globalContext'
 
-const stationName = [
-    {
-        "id" : 0,
-        "name" : "Concentrating Station",
-        "direction" : 4,
-    },
-    {
-        "id" : 1,
-        "name" : "Cleaning Station",
-        "direction" : 5,
-    },
-
-]
-
-const ComboBoxDefault = () => {
- const [selectedName, setSelectedName] = useState(stationName[0])
+const ComboBoxDefault = ({nameArray}) => {
+ const {selectedValue, setSelectedValue} = useGlobalContext()
  const [query, setQuery] = useState('')
- const [direction, setDirection] = useState(4)
+ const {useDirection, setDirection } = directionIdentifier()
 
  const filteredName =
     query === '' 
-    ? stationName
-    : stationName.filter((objectName) =>{
+    ? nameArray
+    : nameArray.filter((objectName) =>{
         return objectName.name.toLowerCase().includes(query.toLowerCase())
     })
   
+    // useEffect(() => {
+    //     const savedValue = localStorage.getItem('selectedOption');
+    //     if (savedValue) {
+    //         setSelectedName(savedValue);
+    //     }
+    // }, []);
+
+    // useEffect(() => {
+    //     if (selectedName?.direction !== undefined) {
+    //       setDirection({ userDirection: selectedName.direction });
+    //     }
+    //   }, [selectedName, setDirection]);
+    
   return (
-    <Combobox value={selectedName} onChange={setSelectedName} onClose={()=>{''}}>
+    <Combobox value={selectedValue} onChange={setSelectedValue} onClose={()=>{''}}>
         <div className='relative'>
             <ComboboxInput 
                 className="rounded-md"
@@ -52,11 +53,8 @@ const ComboBoxDefault = () => {
                     ))
                 }
             </ComboboxOptions>    
-
         </div>
-        
     </Combobox>
-        
   )
 }
 
