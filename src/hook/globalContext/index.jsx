@@ -5,9 +5,10 @@ const GlobalContext = createContext();
 // Provider untuk state
 export const GlobalProvider = ({ children }) => {
   const [selectedValue, setSelectedValue] = useState(null);
+  const [useDirection, setUseDirection] = useState(null)
 
   return (
-    <GlobalContext.Provider value={{ selectedValue, setSelectedValue }}>
+    <GlobalContext.Provider value={{ selectedValue, setSelectedValue, useDirection, setUseDirection }}>
       {children}
     </GlobalContext.Provider>
   );

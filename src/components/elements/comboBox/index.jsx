@@ -1,14 +1,11 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { Combobox, ComboboxInput, ComboboxOption, ComboboxOptions, ComboboxButton } from '@headlessui/react'
 import { CheckIcon, ChevronDownIcon } from '@heroicons/react/20/solid'
-import directionIdentifier from '../../../hook/directionIdentifier'
 import { useGlobalContext } from '../../../hook/globalContext'
 
 const ComboBoxDefault = ({nameArray}) => {
- const {selectedValue, setSelectedValue} = useGlobalContext()
+ const {selectedValue, setSelectedValue, setUseDirection} = useGlobalContext()
  const [query, setQuery] = useState('')
- const {useDirection, setDirection } = directionIdentifier()
-
  const filteredName =
     query === '' 
     ? nameArray
@@ -16,12 +13,14 @@ const ComboBoxDefault = ({nameArray}) => {
         return objectName.name.toLowerCase().includes(query.toLowerCase())
     })
   
-    // useEffect(() => {
-    //     const savedValue = localStorage.getItem('selectedOption');
-    //     if (savedValue) {
-    //         setSelectedName(savedValue);
-    //     }
-    // }, []);
+    useEffect(() => {
+        let array = [selectedValue]
+        if(selectedValue != null){
+            array.map((values) =>{
+                setUseDirection([values.direction])
+            })
+        }
+    }, [selectedValue]);
 
     // useEffect(() => {
     //     if (selectedName?.direction !== undefined) {
