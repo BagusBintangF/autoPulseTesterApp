@@ -1,14 +1,20 @@
 import React from 'react'
-import DialogBar from '../dialogBar';
 import DialogBarWithContent from '../dialogBarWithContent';
 import BackIcon from '../../elements/backIcon';
 import ToggleBar from '../toggleBar';
 import useApiHookWithAlertBar from '../../../hook/useApiHookWithAlert';
 import LoadingPage from '../loadingPage';
 import AlertBar from '../alertBar';
+import { useGlobalContext } from '../../../hook/globalContext';
 
 const StationMotorTestPage = (props) => {
     const {data, error, loading, showAlert, handleClose, fetchData} = useApiHookWithAlertBar()
+    const {useDirection} = useGlobalContext()
+    let motor_id = [3,4]
+
+    if(useDirection == 5){
+        motor_id = [5,6]
+    }
 
     const stationMotorDialogContent=[
         {
@@ -19,7 +25,7 @@ const StationMotorTestPage = (props) => {
                 {
                     testId : 0,
                     testName:"Homing Test",
-                    direction:"motor-test/homing/3",
+                    direction:`motor-test/homing/${motor_id[0]}`,
                 } 
             ]
         },
@@ -31,7 +37,7 @@ const StationMotorTestPage = (props) => {
                 {
                     testId : 0,
                     testName:"Homing Test",
-                    direction:"motor-test/homing/4",
+                    direction:`motor-test/homing/${motor_id[1]}`,
                 } 
             ]
         },
@@ -43,7 +49,7 @@ const StationMotorTestPage = (props) => {
                 {
                     testId : 0,
                     testName:"Rotate Test",
-                    direction:"motor-test/dc/6/",
+                    direction:`motor-test/dc/${useDirection}/6/`,
                 } 
             ]            
         },

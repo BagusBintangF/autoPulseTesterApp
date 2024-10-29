@@ -1,13 +1,14 @@
 import React from 'react'
-import DialogBar from '../dialogBar';
 import DialogBarWithContent from '../dialogBarWithContent';
 import BackIcon from '../../elements/backIcon';
 import AlertBar from '../alertBar';
 import useApiHookWithAlertBar from '../../../hook/useApiHookWithAlert';
 import LoadingPage from '../loadingPage';
+import { useGlobalContext } from '../../../hook/globalContext';
 
 const StationPressureVaccumTestPage = (props) => {
     const {data, error, loading, showAlert, handleClose, fetchData} = useApiHookWithAlertBar()
+    const {useDirection} = useGlobalContext()
 
     const gantryMotorDialogContent=[
         {
@@ -18,22 +19,22 @@ const StationPressureVaccumTestPage = (props) => {
                 {   
                     testId : 0,
                     testName:"Pressure Sensor 1",
-                    direction:"pressure-sensor-station/0"
+                    direction:`pressure-sensor-station/${useDirection}/0`
                 },
                 {
                     testId : 1,
                     testName:"Pressure Sensor 2",
-                    direction:"pressure-sensor-station/1",
+                    direction:`pressure-sensor-station/${useDirection}/1`,
                 },
                 {   
                     testId : 2,
                     testName:"Pressure Sensor 3",
-                    direction:"pressure-sensor-station/2"
+                    direction:`pressure-sensor-station/${useDirection}/2`,
                 },
                 {
                     testId : 3,
                     testName:"Vacuum Sensor 1",
-                    direction:"pressure-sensor-station/3",
+                    direction:`pressure-sensor-station/${useDirection}/3`,
                 } 
             ]
         },
