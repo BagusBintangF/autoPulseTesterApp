@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import DialogBar from '../dialogBar';
-import DialogBarWithContent from '../dialogBarWithContent';
 import BackIcon from '../../elements/backIcon';
 import DialogBarWithIndicator from '../dialogBarWithIndicator';
-import IndicatorBar from '../indicatorBar';
+import { useGlobalContext } from '../../../hook/globalContext';
 
 const StationSwitchTestPage = (props) => {
     const [sensorState, setSensorState] = useState([])
+    const {useDirection} = useGlobalContext()
+
     const stationSwitchDialogContent=[
         {
             id:"input",
@@ -43,7 +43,7 @@ const StationSwitchTestPage = (props) => {
 
     const fetchPost = async (id) => {
         try {
-           const response = await fetch(`http://127.0.0.1:8000/sensor-station/${id}`);
+           const response = await fetch(`http://127.0.0.1:8000/sensor-station/${useDirection}/${id}`);
            if (!response.ok) {
               throw new Error('Network response was not ok');
            }
@@ -88,7 +88,6 @@ const StationSwitchTestPage = (props) => {
                     <DialogBarWithIndicator key={contentDialogInput.id} contentId={contentDialogInput.id} title={contentDialogInput.title} content={contentDialogInput.content} testing={sensorState}/>    
                 )
             })
-            
         }
     </>
   )
