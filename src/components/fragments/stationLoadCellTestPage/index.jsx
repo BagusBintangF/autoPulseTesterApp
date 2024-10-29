@@ -1,14 +1,14 @@
 import React from 'react'
-import DialogBar from '../dialogBar';
 import DialogBarWithContent from '../dialogBarWithContent';
 import BackIcon from '../../elements/backIcon';
 import useApiHookWithAlertBar from '../../../hook/useApiHookWithAlert';
 import LoadingPage from '../loadingPage';
 import AlertBar from '../alertBar';
+import { useGlobalContext } from '../../../hook/globalContext';
 
 const StationLoadCellTestPage = (props) => {
     const {data, error, loading, showAlert, handleClose, fetchData} = useApiHookWithAlertBar()
-
+    const {useDirection} = useGlobalContext()
     const gantryMotorDialogContent=[
         {
             id:0,
@@ -18,17 +18,17 @@ const StationLoadCellTestPage = (props) => {
                 {   
                     testId : 0,
                     testName:"Load Cell 1",
-                    direction:"load-cell-station/0"
+                    direction:`load-cell-station/${useDirection}/0`
                 },
                 {
                     testId : 1,
                     testName:"Load Cell 2",
-                    direction:"load-cell-station/1",
+                    direction:`load-cell-station/${useDirection}/1`,
                 },
                 {   
                     testId : 2,
                     testName:"Load Cell 3",
-                    direction:"load-cell-station/2"
+                    direction:`load-cell-station/${useDirection}/2`
                 },
             ]
         }, 
