@@ -6,9 +6,11 @@ import SequenceBar from '../sequenceBar';
 import useApiHookWithAlertBar from '../../../hook/useApiHookWithAlert';
 import LoadingPage from '../loadingPage';
 import AlertBar from '../alertBar';
+import { useGlobalContext } from '../../../hook/globalContext';
 
 const ValveTestPage = () => {
   const {data, error, loading, showAlert, handleClose, fetchData} = useApiHookWithAlertBar()
+  const {useDirection} = useGlobalContext()
 
   const valveDialogContent=[
     {
@@ -19,12 +21,12 @@ const ValveTestPage = () => {
             {   
                 testId : 0,
                 testName:"On Off Test",
-                direction:"valve-test/on-off/0/"
+                direction:`valve-test/on-off/${useDirection}/0/`
             },
             {
                 testId : 1,
                 testName:"Sequence Test",
-                direction:"valve-test/running/0",
+                direction:`valve-test/running/${useDirection}/0`,
             } 
         ]
     },
@@ -36,12 +38,12 @@ const ValveTestPage = () => {
             {   
                 testId : 0,
                 testName:"On Off Test",
-                direction:"valve-test/on-off/1/"
+                direction:`valve-test/on-off/${useDirection}/1/`
             },
             {
                 testId : 1,
                 testName:"Sequence Test",
-                direction:"valve-test/running/1",
+                direction:`valve-test/running/${useDirection}/1`,
             } 
         ]
     },
@@ -53,12 +55,12 @@ const ValveTestPage = () => {
             {   
                 testId : 0,
                 testName:"On Off Test",
-                direction:"valve-test/on-off/2/"
+                direction:`valve-test/on-off/${useDirection}/2/`
             },
             {
                 testId : 1,
                 testName:"Sequence Test",
-                direction:"valve-test/running/2",
+                direction:`valve-test/running/${useDirection}/2`,
             } 
         ]            
     },
@@ -70,12 +72,12 @@ const ValveTestPage = () => {
             {   
                 testId : 0,
                 testName:"On Off Test",
-                direction:"valve-test/on-off/3/"
+                direction:`valve-test/on-off/${useDirection}/3/`
             },
             {
                 testId : 1,
                 testName:"Sequence Test",
-                direction:"valve-test/running/3",
+                direction:`valve-test/running/${useDirection}/3`,
             } 
         ]
     },
